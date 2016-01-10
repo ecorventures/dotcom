@@ -1,0 +1,58 @@
+{
+  "name": "ecorventures.com",
+  "version": "1.0.0",
+  "description": "ecorventures.com",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecorventures/dotcom.git"
+  },
+  "author": "Corey Butler",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/ecorventures/dotcom/issues"
+  },
+  "homepage": "https://github.com/ecorventures/dotcom#readme",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "buffer-equal-constant-time": "^1.0.1",
+    "caniuse-api": "^1.4.1",
+    "cloudflare4": "^0.2.2",
+    "colors": "^1.1.2",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-header": "^1.7.1",
+    "gulp-svgmin": "^1.2.0",
+    "gulp-uglify": "^1.5.1",
+    "localenvironment": "^1.0.0",
+    "uglify-js": "^2.6.1",
+    "wrench": "^1.5.8",
+    "snazzy": "^2.0.1",
+    "standard": "^5.3.1",
+    "tape": "^4.2.2"
+  },
+  "standard": {
+    "ignore": [
+      "_*",
+      "_**/*",
+      "dist/**/*",
+      "gulpfile.js",
+      "src/assets/js/**/*.min.js"
+    ],
+    "globals": [
+      "NGN",
+      "NGNX",
+      "ECOR",
+      "window",
+      "DOMParser",
+      "XMLHttpRequest",
+      "FormData",
+      "btoa",
+      "localStorage"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+language: node_js
+node_js:
+- 4.2.1
+sudo: false
+before_script:
+- npm install -g gulp
+cache:
+  directories:
+  - node_modules
+notifications:
+  hipchat:
+    template:
+    - ecorventures.com update. %{message} (<a href="%{build_url}">Details</a>)
+    on_pull_requests: false
+    notify: true
+    format: html
+    rooms:
+      secure: k8pZiMJFnJ45U7VawpBC35yrN2jEZXLBsDOVdwQp+e7HGY69Phf2WuaCU/qYAC+SRJqfQJ2H05MuiRqsoNdARuMnKFwD0wIEgBtZD71B/YqeeGzF2AQ1Pqec9MSNYBN3LIF09GePLX0S5cFElvPozn+gIi/Rr/K2tLNmPjJ/gKqZo2wfkO1HBg8cun8C9KEijUf5AZkgbITCZBOAbG9w4hailWhp3eeSNqXFKdfXRorhMZBX7j0bOH+xpM+SqDf4kOZX7qeEZZ2JlW3DMuJfHY9ho6ybRizFHh8ZLGVUhwhKNONQpobV8uUdLwb241SpDr9Z2q6xPa518gvf791pXZ0w7AFrlq2T2L4xE07N9McHXZOObdnj9d4WZytPATagPTCuHTFtNPn+HyrSnoCCCaXsZc7DIDxR5DDzGpP8Rz0OSybha+tjTxphZxgtBg/D/7kFwZxnJUIJ5AwouwCf2L3cM/tV2X8l5ThRHjyri/5wTZdbWOix5ZwytOsbRXqQbtq9pHUU5JzYgBxKqNk4zrZhrDmAAfm9OsXjR3Mu698fANL/l172tHFEkJ9pQLEr6RYNXrFDNodxMx0Q6Ln/3YN1UZAlIJ/wx5jhNPlKt/yhZJHKRwJLE+0GnsXFQSl2pmIns5YEMePY2c4XXM2GJ4dUrHwikjaS2EzGRt1BQ+E=
+deploy:
+  provider: s3
+  access_key_id: AKIAILMXWFWLI2GAUL3A
+  secret_access_key:
+    secure: LaJQXA1PTO9wT2yZxQ4sEPp3GzGoWsiCEJncEflcKyWZzwkh3A970z3kRW6nXKGAwuJrAwU+SJ/6uHz0pGmOCL0y1gGqGMZbB6hOwh72UulGKagXw59D//vfME2kcmLaY3DZxmHuOpv0DRfpr/++vm4bzN+/uhrjYgG/sgFswUUQqF7A2KBqy7PtkXYSG+9Um9fZ64CRw0WwUMjg2oCbRLqy0+RHqDv2l6ihnkQn8D5O9601+TCnp/P/J2au4hVaimOG8/lVoQEiIeLOXOwG6x0tjG2MXkq4D9DfsObsd4PkkPT6TIPVJogIERZf10sJaW19vt03cz+oQ2MtinTIH6B6w+kQtl5rVaanqMIpkK1djy8xdeJ9B47R9UM5MetFnoJgcfFptBPhLQAWooGjvAgfbUlq0fs5V58a1OK+7bLOFUkua5Y7Wu/z+c+6tskR7E86wFudB26C5KJqVR0a/V6UN6Do95sa3kjnSNEhBy32EGHgTq4qqcfy8HB0+ytaOBQgsV4GIzy0y1MPu3l7XizO/wGuoZM/utQZWcNxoXw/KMn+UTZNd7M0yV6/Z7LmGDstdf9Cd2yg/bx14nun96LDtpe3IkLaP9jTijK5h+bBeoTOqnUwB+pry1aF2cBqjDM/bl3Qb2cdYwr8TdmxRkMkRl6Vf21ei2UFFrvVpb0=
+  bucket: ecorventures.com
+  local-dir: "./dist"
+  acl: public_read
+  on:
+    repo: ecorventures/dotcom
